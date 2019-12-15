@@ -1,6 +1,5 @@
 [![GitHub issues](https://img.shields.io/github/issues/0ta2/php_role)](https://github.com/0ta2/php_role/issues)
 [![GitHub stars](https://img.shields.io/github/stars/0ta2/php_role)](https://github.com/0ta2/php_role/stargazers)
-[![CircleCI](https://img.shields.io/circleci/build/github/0ta2/php_role/master)](https://circleci.com/gh/0ta2/php_role)
 ![GitHub Actions](https://github.com/0ta2/php_role/workflows/Molecule%20Test/badge.svg)
 
 php_role
