@@ -1,0 +1,21 @@
+galaxy_info:
+  author: 0ta2
+  description: Setup PHP
+  license: 'license (MIT)'
+  min_ansible_version: 2.9
+  platforms:
+    - name: EL
+      versions:
+        - 7
+    - name: Fedora
+      versions:
+        - 30
+        - 31
+    - name: Ubuntu
+      versions:
+        - 'disco dingo'
+        - eoan
+  galaxy_tags:
+    - timezone
+    - system
+    - server

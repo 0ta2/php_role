@@ -1,0 +1,8 @@
+---
+- name: Template copy 99-php.ini.
+  template:
+    src: 99-php.ini.j2
+    dest: "{{ php_conf_d_dir }}/99-php.ini"
+    owner: "root"
+    group: "root"
+    mode: "0644"

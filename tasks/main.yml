@@ -1,0 +1,6 @@
+---
+- name: Install PHP task.
+  import_tasks: install_php.yml
+
+- name: Setup PHP task.
+  import_tasks: setup_php.yml
