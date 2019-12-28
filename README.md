@@ -23,14 +23,13 @@ Role Variables
 | php_ini             | php.ini に追加したい項目を定義 |
 
 
-php.ini は、下記の用に `name` , `value` で設定を記載すれば、`php_conf_d_dir` 配下に `99-php.ini` というファイル名で配置されます。
+php.ini は、下記の用に `section`, `option`, `value` で設定を記載すれば、`99-php.ini` というファイル名で配置されます。
 
 デフォルトの `Timezone` は、`Asia/Tokyo` になっています。
 
 ```
 php_ini:
-  - { name: 'short_open_tag', value: 'On' }
-  - { name: 'expose_php', value: 'Off' }
+ - { section: "Date", option: "date.timezone", value: "Asia/Tokyo" }
 ```
 
 Dependencies
