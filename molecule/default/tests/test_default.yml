@@ -1,8 +1,15 @@
 # Molecule managed
 
 ---
-file:
-  /etc/hosts:
-    exists: true
-    owner: root
-    group: root
+package:
+  php:
+    installed: true
+
+command:
+  version:
+    exit-status: 0
+    exec: "php -i | grep date.timezone"
+    stdout:
+    - date.timezone => Asia/Tokyo => Asia/Tokyo
+    stderr: []
+    timeout: 10000

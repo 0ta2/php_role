@@ -25,6 +25,8 @@ Role Variables
 
 php.ini は、下記の用に `name` , `value` で設定を記載すれば、`php_conf_d_dir` 配下に `99-php.ini` というファイル名で配置されます。
 
+デフォルトの `Timezone` は、`Asia/Tokyo` になっています。
+
 ```
 php_ini:
   - { name: 'short_open_tag', value: 'On' }

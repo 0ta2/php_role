@@ -1,8 +1,17 @@
 ---
-- name: Template copy 99-php.ini.
-  template:
-    src: 99-php.ini.j2
-    dest: "{{ php_conf_d_dir }}/99-php.ini"
+- name: Get the conf.d directory path.
+  shell: |
+    php -i | grep -e "php.d$" -e "conf.d$" | awk '{print $9}'
+  changed_when: false
+  register: _php_conf_d_dir
+
+- name: Create 99-php.ini.
+  ini_file:
+    path: "{{ _php_conf_d_dir.stdout }}/99-php.ini"
     owner: "root"
     group: "root"
     mode: "0644"
+    section: "{{ item.section }}"
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+  with_items: "{{ php_ini }}"

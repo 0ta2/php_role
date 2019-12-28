@@ -1,13 +1,8 @@
 ---
 php_install_package:
   - "php"
-  - "php-devel"
 
-php_packages_extra:
-  - "php-mysql"
+php_packages_extra: []
 
-php_conf_d_dir: "/etc/php.d"
-
-php_ini: []
-#  - { name: 'short_open_tag', value: 'On' }
-#  - { name: 'expose_php', value: 'Off' }
+php_ini:
+ - { section: "Date", option: "date.timezone", value: "Asia/Tokyo" }
