@@ -2,6 +2,8 @@
 - name: Get the conf.d directory path.
   shell: |
     php -i | grep -e "php.d$" -e "conf.d$" | awk '{print $9}'
+  args:
+    executable: /bin/bash
   changed_when: false
   register: _php_conf_d_dir
 
