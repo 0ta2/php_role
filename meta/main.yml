@@ -16,6 +16,4 @@ galaxy_info:
         - 'disco dingo'
         - eoan
   galaxy_tags:
-    - timezone
-    - system
-    - server
+    - php
