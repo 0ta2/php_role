@@ -23,4 +23,4 @@ jobs:
           pip install molecule docker
       - name: Test with molecule
         run: |
-          MOLECULE_DISTRO=${{ matrix.MOLECULE_DISTRO }} molecule test
+          MOLECULE_DISTRO=${{ matrix.MOLECULE_DISTRO }} molecule --debug test
