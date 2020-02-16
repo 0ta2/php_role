@@ -1,6 +1,8 @@
 ---
 dependency:
   name: galaxy
+  options:
+    role-file: requirements.yml
 driver:
   name: docker
 lint:
@@ -16,6 +18,6 @@ provisioner:
   lint:
     name: ansible-lint
 verifier:
-  name: goss
+  name: ansible
   lint:
-    name: yamllint
+    name: ansible-lint
