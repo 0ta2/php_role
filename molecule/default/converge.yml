@@ -1,0 +1,16 @@
+---
+- name: Converge
+  hosts: all
+
+  vars:
+    php_enable_repo: "remi,remi-php73"
+
+  tasks:
+    - name: "Include repo_remi_role"
+      include_role:
+        name: "0ta2.repo_remi_role"
+      when: ansible_distribution == "CentOS" or ansible_distribution == "RedHat"
+
+    - name: "Include php_role"
+      include_role:
+        name: "php_role"

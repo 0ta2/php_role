@@ -3,19 +3,12 @@ dependency:
   name: galaxy
 driver:
   name: docker
-lint:
-  name: yamllint
 platforms:
   - name: instance
     image: ${MOLECULE_DISTRO:-centos:7}
     privileged: True
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    command: /sbin/init
 provisioner:
   name: ansible
-  lint:
-    name: ansible-lint
 verifier:
-  name: goss
-  lint:
-    name: yamllint
+  name: ansible

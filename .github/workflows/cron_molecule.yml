@@ -9,7 +9,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        MOLECULE_DISTRO: ['centos:centos7', 'fedora:30', 'fedora:31', 'ubuntu:bionic', 'ubuntu:disco']
+        MOLECULE_DISTRO: ['centos:centos7', 'centos:centos8', 'fedora:32', 'fedora:33', 'ubuntu:eoan', 'ubuntu:focal']
         python-version: ['3.5']
 
     steps:

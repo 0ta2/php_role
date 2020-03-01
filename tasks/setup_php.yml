@@ -4,9 +4,9 @@
     set -o pipefail
     php -i | grep -e "php.d$" -e "conf.d$" | awk '{print $9}'
   args:
-    executable: /bin/bash
-  changed_when: false
-  register: _php_conf_d_dir
+    executable: "/bin/bash"
+  changed_when: "false"
+  register: "_php_conf_d_dir"
 
 - name: Create 99-php.ini.
   ini_file:
