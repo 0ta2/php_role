@@ -10,7 +10,7 @@
   package:
     name: "{{ php_install_package }}"
     state: "present"
-  when: ansible_distribution == "Fedora"
+  when: ansible_distribution == "Fedora" or ansible_distribution == "Ubuntu"
 
 - name: Install extra package.
   package:
