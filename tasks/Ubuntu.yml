@@ -1,13 +1,15 @@
 ---
 - name: Install PHP Package.
-  package:
+  apt:
     name: "{{ php_install_package }}"
-    state: "present"
+    update_cache: "yes"
+    state: "{{ php_package_state | default('present') }}"
 
 - name: Install extra package.
-  package:
+  apt:
     name: "{{ php_packages_extra }}"
-    state: "present"
+    update_cache: "yes"
+    state: "{{ php_package_state | default('present') }}"
   when: php_packages_extra is defined
 
 - name: Get the conf.d directory path.
