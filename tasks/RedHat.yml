@@ -1,4 +1,16 @@
----
+--
+- name: Install PHP Package.
+  package:
+    name: "{{ php_install_package }}"
+    state: "present"
+
+- name: Install extra package.
+  package:
+    name: "{{ php_packages_extra }}"
+    state: "present"
+  when: php_packages_extra is defined
+
+
 - name: Get the conf.d directory path.
   shell: |
     set -o pipefail
