@@ -2,6 +2,8 @@
 php_install_package:
   - "php"
 
+php_package_state: "present"
+
 php_packages_extra: []
 
 php_ini:

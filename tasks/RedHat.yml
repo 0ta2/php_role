@@ -1,0 +1,31 @@
+---
+- name: Install PHP Package.
+  package:
+    name: "{{ php_install_package }}"
+    state: "present"
+
+- name: Install extra package.
+  package:
+    name: "{{ php_packages_extra }}"
+    state: "present"
+  when: php_packages_extra is defined
+
+- name: Get the conf.d directory path.
+  shell: |
+    set -o pipefail
+    php -i | grep -e "php.d$" -e "conf.d$" | awk '{print $9}'
+  args:
+    executable: "/bin/bash"
+  changed_when: "false"
+  register: "_php_conf_d_dir"
+
+- name: Create 99-php.ini.
+  ini_file:
+    path: "{{ _php_conf_d_dir.stdout }}/99-php.ini"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+    section: "{{ item.section }}"
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+  with_items: "{{ php_ini }}"
